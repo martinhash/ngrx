@@ -24,14 +24,6 @@ It is a normal angular 9 project.
 ```
 Application Web (Angular using Material Design) - App at http://localhost:4200/
 
-## :star2: Prerender Universal
-
-Prerender in Universal
-
-```sh
-   ng run games:prerender
-```
-
 ## Authors
 
 * **Martin Barria Joost** - *Initial work* - [GitHub](https://github.com/martinjoost)
