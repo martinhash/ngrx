@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import { Store, Action } from '@ngrx/store';
+
+interface AppState{
+  count:number
+}
+
 
 @Component({
   selector: 'app-root',
@@ -8,15 +14,23 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'minigame';
   point:number;
-  constructor(){
-    this.point = 10;
+  constructor( private store:Store<AppState> ){
+    this.store.subscribe(state =>{
+      this.point = state.count;
+    })
   }
 
   inc(){
-    this.point = this.point + 1;
+    const action:Action = {
+      type:'INCREMENTATION'
+    };
+    this.store.dispatch(action)
   }
   
   dec(){
-    this.point = this.point - 1;
+    const action:Action = {
+      type:'DECREMENTATION'
+    };
+    this.store.dispatch(action)
   }
 }
