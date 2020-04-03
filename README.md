@@ -1,27 +1,43 @@
-# Minigame
+### :game_die: NGRX :game_die:
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
 
-## Development server
+### Web App
+#### Includes (These features are made in Angular)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This is a simple angular project that doesn't use any dependencies
 
-## Code scaffolding
+- [x] Reducer
+- [x] Action
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## :star2: Installing/Running
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+It is a normal angular 9 project.
 
-## Running unit tests
+```sh
+   git clone https://github.com/martinjoost/ngrx
+   cd ngrx
+   npm i
+   ng serve
+```
+Application Web (Angular using Material Design) - App at http://localhost:4200/
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## :star2: Prerender Universal
 
-## Running end-to-end tests
+Prerender in Universal
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```sh
+   ng run games:prerender
+```
 
-## Further help
+## Authors
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* **Martin Barria Joost** - *Initial work* - [GitHub](https://github.com/martinjoost)
+
+See also the list of [contributors](https://github.com/martinjoost/ngrx) who participated in this project.
+
+## License
+
+This project is licensed under the ISC License 
