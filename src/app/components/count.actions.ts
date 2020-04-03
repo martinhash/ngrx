@@ -4,6 +4,7 @@ export const INCREMENTATION = '[Count] Incrementation';
 export const DECREMENTATION = '[Count] Decrementation';
 export const MULTIPLICATION = '[Count] Multiplication';
 export const DIVISION = '[Count] Division';
+export const RESET = '[Count] Reset';
 
 
 export class IncrementAction implements Action{
@@ -22,5 +23,9 @@ export class MultiplicateAction implements Action{
 
 export class DivisionAction implements Action{
     readonly type = DIVISION;
+}
+
+export class ResetAction implements Action{
+    readonly type = RESET;
 }
 

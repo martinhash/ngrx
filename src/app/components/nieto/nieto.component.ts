@@ -1,4 +1,7 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/app.reducers';
+import { ResetAction } from '../count.actions';
 
 @Component({
   selector: 'app-nieto',
@@ -7,16 +10,19 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class NietoComponent implements OnInit {
 
-  @Input() point:number;
-  @Output() pointToReset = new EventEmitter<number>();
-  constructor() { }
+
+  point:number;
+
+  constructor(private store:Store<AppState>) { }
 
   ngOnInit(): void {
+    this.store.select('count').subscribe(count=>this.point = count)
   }
 
   reset(){
-    this.point = 0;
-    this.pointToReset.emit(0);
+    const action = new ResetAction();
+    this.store.dispatch(action);
+    
   }
 
 }
