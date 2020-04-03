@@ -1,33 +1,32 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/app.reducers';
+import { MultiplicateAction, DivisionAction } from '../count.actions';
 @Component({
   selector: 'app-son',
   templateUrl: './son.component.html',
   styleUrls: ['./son.component.css']
 })
 export class SonComponent implements OnInit {
-  @Input() point:number;
-  @Output() pointToChange = new EventEmitter<number>();
 
+  point:number;
 
-
-  constructor() { }
+  constructor( private store:Store<AppState>) { }
 
   ngOnInit(): void {
+    this.store.select('count').subscribe(count=>this.point = count)
   }
 
   multiplication(){
-    this.point *= 2; 
-    this.pointToChange.emit(this.point);
+    const action = new MultiplicateAction();
+    this.store.dispatch(action);
   }
 
   division(){
-    this.point /= 2; 
-    this.pointToChange.emit(this.point);
+    const action = new DivisionAction();
+    this.store.dispatch(action);
   }
   resetPoint( newPoint ){
-    this.point = newPoint;
-    this.pointToChange.emit(this.point);
   }
 
 }
