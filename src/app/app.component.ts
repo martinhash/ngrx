@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Store, Action } from '@ngrx/store';
+import { IncrementAction,  DecrementAction} from './components/count.actions';
 
 interface AppState{
   count:number
@@ -20,17 +21,13 @@ export class AppComponent {
     })
   }
 
-  inc(){
-    const action:Action = {
-      type:'INCREMENTATION'
-    };
+  incrementation(){
+    const action = new IncrementAction();
     this.store.dispatch(action)
   }
   
-  dec(){
-    const action:Action = {
-      type:'DECREMENTATION'
-    };
+  decrementation(){
+    const action = new DecrementAction();
     this.store.dispatch(action)
   }
 }
