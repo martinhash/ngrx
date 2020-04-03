@@ -16,9 +16,7 @@ export class AppComponent {
   title = 'minigame';
   point:number;
   constructor( private store:Store<AppState> ){
-    this.store.subscribe(state =>{
-      this.point = state.count;
-    })
+    this.store.select('count').subscribe( count => this.point = count)
   }
 
   incrementation(){
